@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Logica de Programacao Javascript</title>
+    </head>
+    <body>
+        <h1>Logica de Programacao Javascript</h1>
+
+        <div id="output"></div>
+    </body>
+
+    <script>
+
+
+        /*
+
+        Maneiras diferentes de criar um array ou um object
+
+        var nomes = ['maria', 'joao', 'vitor'] //array
+
+        var prod = {'Nome': 'Caneta', 'Preco': 1.1, 'Cor': 'Azul'} //object
+
+        var produtos = [prod, {'Nome': 'lapis', 'Preco': 2, 'Cor': 'rosa'}]
+
+        */
+
+        var produto1 = new Object();
+        produto1.nome = "caneta";
+        produto1.preco = 2.2;
+        produto1.estoque = 10;
+
+        produto1.comprar = function(qtd){
+            if(!qtd){
+                qtd = 1;
+            }
+            console.log('Comprou caneta');
+            //this.estoque--;
+            this.estoque = this.estoque - qtd;
+            console.log(this.estoque);
+        }
+        
+        var msg = '';
+
+        msg += 'nome: ' + produto1.nome + '<br>';
+        msg += 'preco: ' + produto1.preco + '<br>';
+        msg += 'estoque: ' + produto1.estoque + '<br>';
+
+        document.querySelector('#output').innerHTML = msg;
+        
+
+    </script>
+</html>
