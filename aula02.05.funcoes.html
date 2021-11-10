@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Curso Javascript</title>
+        <meta charset="utf-8">
+
+        <script>
+
+            //literal
+           function somar(n1, n2){
+               //corpo da funcao
+               return n1 + n2;
+           }
+
+           var soma = somar(10, 20);
+           console.log('Resultado: ', soma)
+
+           somar.teste = 'propriedade da funcao';
+
+           console.log(somar.teste);
+
+           var teste = function abacaxi(f){
+               //console.log('teste', str);
+               f();
+
+           };
+           
+           teste(function(){
+               console.log('funcao passada por parametro')
+            });
+
+            console.log('--------------------');
+
+            var x = 0;
+            var y;
+
+            function mostraX(){
+                var x = 10; //escopo local, nao conflita com outras variaveis fora
+                var y = 20; //escopo global *y = 20*               
+                console.log('Mostra x dentro: ', x)
+                console.log('Mostra y dentro: ', y)
+            }
+
+            mostraX();
+
+            console.log('Mostra x fora: ', x);
+            console.log('Mostra y fora: ', y);
+
+            (function(){
+                'Use strict'
+                //IIFE funcao auto invocado
+                isValid = false;
+                console.log(isValid);
+
+                function somar(){
+                    console.log(arguments);
+                    var resultado = 0;
+                    var x = 0;
+
+                    while(arguments[x]){
+                        resultado += arguments[x];
+                        //resultado = resultado + arguments[x];
+                        x++;
+                    }
+
+                    console.log('resultado', resultado);
+                }
+
+                somar(20, 20, 10, 30);
+            })();
+
+            
+        
+
+
+
+        </script>
+
+    </head>
+    <body>
+        <h1>Curso Javascript</h1>
+    </body>
+</html>
