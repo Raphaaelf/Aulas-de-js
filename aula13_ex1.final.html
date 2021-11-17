@@ -95,9 +95,11 @@
 					
 					var mensagem = '';
 
-					var temZero = notas.some(function(notas){
+					/*var temZero = notas.some(function(notas){
 						return notas === 0;
-					});
+					});*/
+
+					var temZero = notas.some( notas => notas === 0);
 
 					var mensagem = temZero ? 'Reprovado':
 					calcularMedia.apply(this, notas);
